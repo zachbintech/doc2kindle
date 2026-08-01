@@ -6,16 +6,17 @@ Started from [`personal` repo issue #4](https://github.com/zachbintech/personal/
 
 ## Status
 
-Scaffolding only — see the repo's Issues tab for the build checklist.
+Built and working — end-to-end tested against a real Kindle. See closed issues
+in the repo's Issues tab for build history.
 
-## Planned usage
+## Usage
 
 ```bash
 doc2kindle ~/path/to/file.md
 doc2kindle report.pdf notes.docx   # multiple files in one call
 ```
 
-## Setup (once built)
+## Setup
 
 1. Install Calibre (provides `ebook-convert`): `sudo apt install calibre`
 2. Copy `config.example.py` to `config.py` and fill in your Gmail address, a [Gmail App Password](https://myaccount.google.com/apppasswords), and your Kindle send-to address.
