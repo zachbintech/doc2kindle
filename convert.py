@@ -10,11 +10,14 @@ def convert_to_epub(src: Path, dest_dir: Path) -> Path:
         )
 
     dest = dest_dir / f"{src.stem}.epub"
-    result = subprocess.run(
-        ["ebook-convert", str(src), str(dest), "--title", src.stem],
-        capture_output=True,
-        text=True,
-    )
+    command = ["ebook-convert", str(src), str(dest), "--title", src.stem]
+    if src.suffix.lower() in (".md", ".markdown", ".mkd", ".mdown"):
+        # Calibre's default markdown extensions (footnotes,tables,toc) don't
+        # include fenced_code, so ``` code blocks render as justified prose
+        # instead of a monospace <pre> block.
+        command.append("--markdown-extensions=footnotes,tables,toc,fenced_code")
+
+    result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise RuntimeError(
             f"ebook-convert failed for {src} (exit {result.returncode}):\n{result.stderr}"
