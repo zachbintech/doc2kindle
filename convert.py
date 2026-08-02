@@ -11,7 +11,7 @@ def convert_to_epub(src: Path, dest_dir: Path) -> Path:
 
     dest = dest_dir / f"{src.stem}.epub"
     result = subprocess.run(
-        ["ebook-convert", str(src), str(dest)],
+        ["ebook-convert", str(src), str(dest), "--title", src.stem],
         capture_output=True,
         text=True,
     )
