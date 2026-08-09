@@ -1,0 +1,19 @@
+[project]
+name = "doc2kindle"
+version = "0.1.0"
+description = "Convert documents to EPUB and email them to a Kindle, as a CLI or an MCP server."
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.0.0",
+]
+
+[project.scripts]
+doc2kindle = "doc2kindle.cli:main"
+doc2kindle-mcp = "doc2kindle.mcp_server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
