@@ -1,14 +1,10 @@
-#!/usr/bin/env python3
 import argparse
-import os
 import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
-
-from convert import convert_to_epub
-from mailer import send_to_kindle
+from .convert import convert_to_epub
+from .mailer import send_to_kindle
 
 
 def main() -> int:

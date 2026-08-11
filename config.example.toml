@@ -1,24 +1,25 @@
-# Copy this file to config.py and fill in real values.
-# config.py is gitignored and must never be committed.
+# Copy this file to ~/.config/doc2kindle/config.toml and fill in real values.
+# (Or point the DOC2KINDLE_CONFIG env var at a different path.)
+# This file lives outside the installed package, so it survives upgrades.
 
 # Gmail's SMTP host; rarely needs to change.
-SMTP_HOST = "smtp.gmail.com"
+smtp_host = "smtp.gmail.com"
 
 # STARTTLS port for Gmail SMTP; rarely needs to change.
-SMTP_PORT = 587
+smtp_port = 587
 
 # The Gmail address doc2kindle sends from. Must also be added to your
 # Kindle's approved sender list: Amazon -> Manage Your Content and Devices
 # -> Preferences -> Personal Document Settings -> Approved Personal
 # Document E-mail List.
-SMTP_FROM = "you@gmail.com"
+smtp_from = "you@gmail.com"
 
-# Gmail App Password for SMTP_FROM (not your regular Gmail password).
+# Gmail App Password for smtp_from (not your regular Gmail password).
 # Requires 2FA enabled on the account. Generate one at:
 # https://myaccount.google.com/apppasswords
-SMTP_APP_PASSWORD = ""
+smtp_app_password = ""
 
 # Your Kindle's "Send to Kindle" email address. Find it at:
 # Amazon -> Manage Your Content and Devices -> Preferences ->
 # Personal Document Settings -> Send-to-Kindle E-Mail Settings.
-KINDLE_TO = "your-kindle-address@kindle.com"
+kindle_to = "your-kindle-address@kindle.com"
