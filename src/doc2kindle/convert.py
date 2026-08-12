@@ -6,7 +6,11 @@ from pathlib import Path
 def convert_to_epub(src: Path, dest_dir: Path) -> Path:
     if shutil.which("ebook-convert") is None:
         raise RuntimeError(
-            "ebook-convert not found on $PATH — install Calibre: sudo apt install calibre"
+            "ebook-convert not found on $PATH — install Calibre:\n"
+            "  Linux: sudo apt install calibre\n"
+            "  macOS: brew install --cask calibre && ln -s"
+            " /Applications/calibre.app/Contents/MacOS/ebook-convert"
+            " /opt/homebrew/bin/ebook-convert"
         )
 
     dest = dest_dir / f"{src.stem}.epub"
