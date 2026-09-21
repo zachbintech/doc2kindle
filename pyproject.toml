@@ -5,6 +5,7 @@ description = "Convert documents to EPUB and email them to a Kindle, as a CLI or
 requires-python = ">=3.11"
 dependencies = [
     "mcp>=2.0.0",
+    "Pillow>=10.0.0",
 ]
 
 [project.scripts]
