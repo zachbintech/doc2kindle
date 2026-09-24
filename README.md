@@ -13,7 +13,13 @@ in the repo's Issues tab for build history.
 
 ## Install
 
-1. Install Calibre (provides `ebook-convert`): `sudo apt install calibre`
+1. Install Calibre (provides `ebook-convert`):
+   - Linux: `sudo apt install calibre`
+   - macOS: `brew install --cask calibre`, then symlink the CLI onto your PATH
+     (the app bundle doesn't add it):
+     ```bash
+     ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /opt/homebrew/bin/ebook-convert
+     ```
 2. Install the package with [pipx](https://pipx.pypa.io/) (or `uv tool install`):
    ```bash
    pipx install git+ssh://git@github.com/zachbintech/doc2kindle.git
@@ -29,6 +35,16 @@ in the repo's Issues tab for build history.
 
 To pick up updates later, re-run the same `pipx install --force ...` command.
 
+## Development install
+
+To hack on a local clone, install it as an editable tool so edits take effect
+immediately, without reinstalling:
+
+```bash
+git clone https://github.com/zachbintech/doc2kindle.git
+uv tool install --editable ./doc2kindle   # or: pipx install -e ./doc2kindle
+```
+
 ## CLI usage
 
 ```bash
@@ -43,6 +59,10 @@ Register it once, at user scope, so it's available from every project:
 ```bash
 claude mcp add doc2kindle --scope user -- doc2kindle-mcp
 ```
+
+If Claude Code is ever launched from an environment where `~/.local/bin` isn't
+on PATH (common for GUI-launched apps), register with the absolute path
+instead: `claude mcp add doc2kindle --scope user -- ~/.local/bin/doc2kindle-mcp`
 
 This exposes a single `send_to_kindle(file_path)` tool that converts a file
 and emails it, using the same `~/.config/doc2kindle/config.toml` as the CLI.

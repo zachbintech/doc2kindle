@@ -29,7 +29,9 @@ Originated from [`personal` repo issue #4](https://github.com/zachbintech/person
 doc2kindle report.pdf notes.md
 ```
 
-Requires Calibre installed (`sudo apt install calibre`) and
+Requires Calibre installed (Linux: `sudo apt install calibre`; macOS:
+`brew install --cask calibre` plus symlinking `ebook-convert` from the app
+bundle onto PATH — see README) and
 `~/.config/doc2kindle/config.toml` filled in (SMTP app password + Kindle
 send-to address) — see `config.example.toml`.
 
