@@ -1,10 +1,9 @@
 # doc2kindle
 
-Converts documents to EPUB and emails them to a Kindle "Send to Kindle" address over Gmail SMTP. It accepts Markdown, PDF and anything else Calibre's `ebook-convert` reads. It ships as an installable Python package with both a CLI (`doc2kindle`) and an MCP server (`doc2kindle-mcp`), so it works from any project. It started from [`personal` issue #4](https://github.com/zachbintech/personal/issues/4).
+Converts documents to EPUB and emails them to a Kindle "Send to Kindle" address over Gmail SMTP. It accepts Markdown, PDF and anything else Calibre's `ebook-convert` reads. It ships as an installable Python package with both a CLI (`doc2kindle`) and an MCP server (`doc2kindle-mcp`), so it works from any project.
 
 ## Read first
 
-- [`../strategy/engineering/strategy.md`](../strategy/engineering/strategy.md) is the shared workflow: what runs today, the `AGENTS.md` standard (§0), spec first, and the Definition of Done (§5). It lives in `zachbintech/strategy` at `engineering/strategy.md`, cloned beside this repo under `~/infra/`. Cloud sessions without that clone can read it on GitHub.
 - [`README.md`](README.md) covers install (Calibre + pipx), config, CLI usage and MCP registration.
 
 ## Commands
